@@ -48,11 +48,16 @@ export function ProjectDetails() {
           </section>
 
           <section className="hero-visual">
-            <div className="visual-frame primary">
-              <div className="visual-placeholder">
-                <span>{project.visualCaptions[0].title}</span>
-              </div>
-              <small>{project.visualCaptions[0].caption}</small>
+            <div className="hero-visual-grid">
+              {project.heroVisuals.map((visual) => (
+                <figure className="visual-frame primary" key={visual.title}>
+                  <img src={visual.src} alt={visual.title} />
+                  <figcaption>
+                    <strong>{visual.title}</strong>
+                    <small>{visual.caption}</small>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </section>
 
@@ -108,12 +113,13 @@ export function ProjectDetails() {
                 ))}
               </div>
             </div>
-            <div className="visual-frame secondary">
-              <div className="visual-placeholder">
-                <span>{project.visualCaptions[1].title}</span>
-              </div>
-              <small>{project.visualCaptions[1].caption}</small>
-            </div>
+            <figure className="visual-frame secondary">
+              <img src={project.architectureVisual.src} alt={project.architectureVisual.title} />
+              <figcaption>
+                <strong>{project.architectureVisual.title}</strong>
+                <small>{project.architectureVisual.caption}</small>
+              </figcaption>
+            </figure>
           </section>
 
           <section className="bottom-grid">
@@ -136,11 +142,17 @@ export function ProjectDetails() {
           </section>
 
           <section className="implementation-photo">
-            <div className="visual-frame tertiary">
-              <div className="visual-placeholder">
-                <span>{project.visualCaptions[2].title}</span>
-              </div>
-              <small>{project.visualCaptions[2].caption}</small>
+            <h2>Implementation Photos</h2>
+            <div className="implementation-grid">
+              {project.implementationVisuals.map((visual) => (
+                <figure className="visual-frame tertiary" key={visual.title}>
+                  <img src={visual.src} alt={visual.title} />
+                  <figcaption>
+                    <strong>{visual.title}</strong>
+                    <small>{visual.caption}</small>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </section>
         </article>

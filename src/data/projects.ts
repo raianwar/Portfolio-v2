@@ -1,3 +1,19 @@
+import electricityDashboard from "../assets/projects/page1-image1.jpg";
+import electricityArchitecture from "../assets/projects/page1-image2.jpg";
+import electricityPanelMachine from "../assets/projects/page1-image3.jpg";
+import electricityIndustrialPc from "../assets/projects/page1-image4.jpg";
+import electricityPanelDistribution from "../assets/projects/page1-image5.jpg";
+import oeeDashboardLine from "../assets/projects/page2-image1.jpg";
+import oeeDashboardSummary from "../assets/projects/page2-image2.jpg";
+import oeeMonitoringTable from "../assets/projects/page2-image3.jpg";
+import oeeArchitecture from "../assets/projects/page2-image4.jpg";
+
+type ProjectVisual = {
+  src: string;
+  title: string;
+  caption: string;
+};
+
 export type ProjectDetail = {
   slug: string;
   title: string;
@@ -15,10 +31,9 @@ export type ProjectDetail = {
     title: string;
     body: string;
   }[];
-  visualCaptions: {
-    title: string;
-    caption: string;
-  }[];
+  heroVisuals: ProjectVisual[];
+  architectureVisual: ProjectVisual;
+  implementationVisuals: ProjectVisual[];
 };
 
 export const projects: ProjectDetail[] = [
@@ -33,7 +48,7 @@ export const projects: ProjectDetail[] = [
     challenge:
       "Before this implementation, electricity usage was not visible in a way that operations and engineering teams could use quickly for decision-making. Data existed in separate devices, making it difficult to analyze consumption by machine, detect abnormalities, and prioritize efficiency actions.",
     solution:
-      "I designed a data flow from field devices into a centralized monitoring dashboard using industrial communication protocols and time-series data handling. The dashboard was structured to present real-time values, historical trends, and machine-level views so users could evaluate consumption behavior with less manual effort.",
+      "I designed the electricity monitoring system using Schneider PM2200 power meters installed across 30 critical high-consumption machines. Energy data collected through Modbus RTU was converted into Modbus TCP, processed with Telegraf, then forwarded into SQL Database and TSDB for structured storage, historical analysis, and dashboard visualization.",
     impact: [
       "Improved visibility of machine-level electricity consumption across 30 critical assets.",
       "Supported faster identification of high-consumption patterns and abnormal usage behavior.",
@@ -67,7 +82,7 @@ export const projects: ProjectDetail[] = [
       {
         title: "How I Built It",
         body:
-          "I mapped the data sources, defined the communication path, and structured the data so it could be processed consistently. After the acquisition layer was stable, I focused on dashboard organization to make the information easy to read by plant users.",
+          "I mapped the meter locations, defined the communication architecture, converted Modbus RTU into Modbus TCP for stable network integration, and used Telegraf as the ETL layer. After the acquisition path was stable, I connected the data to SQL Database and TSDB so the dashboard could show real-time values and historical trends.",
       },
       {
         title: "Why It Matters",
@@ -75,18 +90,38 @@ export const projects: ProjectDetail[] = [
           "With a centralized monitoring view, the team can evaluate energy behavior more quickly, detect abnormal usage, and support discussions around efficiency improvement using actual production data.",
       },
     ],
-    visualCaptions: [
+    heroVisuals: [
       {
+        src: electricityDashboard,
         title: "Dashboard Preview",
-        caption: "Use this area for the main dashboard screenshot that shows real-time energy monitoring.",
+        caption: "Main dashboard page summary for real-time electricity monitoring and trend analysis.",
       },
       {
+        src: electricityArchitecture,
         title: "Architecture / Device Network",
-        caption: "Use this block for the communication architecture, device topology, or data flow diagram.",
+        caption: "Network and device architecture from PM2200 meters to edge device, database, and dashboard layer.",
+      },
+    ],
+    architectureVisual: {
+      src: electricityArchitecture,
+      title: "Architecture Network and Device",
+      caption: "Communication flow using PM2200 power meters, Modbus network, industrial PC, and dashboard environment.",
+    },
+    implementationVisuals: [
+      {
+        src: electricityPanelMachine,
+        title: "PM 2220 in Panel Machine",
+        caption: "Power meter installation on machine panel for electrical data acquisition.",
       },
       {
-        title: "Field Implementation",
-        caption: "Use this area for panel, meter, or industrial PC photos from the actual project installation.",
+        src: electricityPanelDistribution,
+        title: "USR-W610 in Panel Distribution",
+        caption: "Panel distribution setup for device communication and network conversion.",
+      },
+      {
+        src: electricityIndustrialPc,
+        title: "PC Industrial in Production Plant Office",
+        caption: "Industrial PC acting as the edge device within the plant network.",
       },
     ],
   },
@@ -101,7 +136,7 @@ export const projects: ProjectDetail[] = [
     challenge:
       "The production floor needed a reliable way to monitor performance from many machines in one place. Manual tracking limited response speed, made downtime analysis slower, and reduced confidence in daily performance reporting.",
     solution:
-      "I implemented a real-time monitoring solution that collected machine signals, processed production information, and sent the data to a centralized database and dashboard environment. The system connected machine-level events with reporting needs so users could analyze losses, review history, and monitor operational performance continuously.",
+      "I developed the OEE monitoring system by integrating shopfloor-level PLCs with a centralized MES-oriented data architecture. Machine signals were transmitted to a background application built in C# using socket communication, then processed and stored in SQL Server for real-time dashboard visualization across 52 production machines.",
     impact: [
       "Enabled real-time monitoring for 52 production machines in one system.",
       "Improved downtime tracking and production visibility for operations teams.",
@@ -135,7 +170,7 @@ export const projects: ProjectDetail[] = [
       {
         title: "How I Built It",
         body:
-          "I designed the data path from the machine layer into the reporting system, structured the event handling for downtime and quantity tracking, and helped shape the dashboard so users could navigate the data more effectively.",
+          "I connected PLC data into a socket-based C# background application that processed machine logic, executed stored procedures, and managed SQL Server transactions. After the data foundation was stable, I organized the dashboard views to highlight downtime, quantity, cycle time, and speed clearly for management use.",
       },
       {
         title: "Why It Matters",
@@ -143,18 +178,38 @@ export const projects: ProjectDetail[] = [
           "The system reduced the gap between production events and management visibility. That makes problem response faster and provides a stronger basis for continuous improvement activity.",
       },
     ],
-    visualCaptions: [
+    heroVisuals: [
       {
+        src: oeeDashboardSummary,
         title: "OEE Dashboard Preview",
-        caption: "Use this area for the live dashboard screenshot showing OEE, downtime, and production performance.",
+        caption: "Live summary dashboard showing OEE, target, cycle time, speed, and output information.",
       },
       {
-        title: "System Architecture",
-        caption: "Use this block for the relationship between PLC, communication service, database, and dashboard.",
+        src: oeeDashboardLine,
+        title: "Production Timeline Chart",
+        caption: "Operational dashboard view for line-level monitoring and production timeline tracking.",
+      },
+    ],
+    architectureVisual: {
+      src: oeeArchitecture,
+      title: "System Architecture",
+      caption: "Architecture flow between PLC, C# background panel, stored procedures, SQL Server, and dashboard layer.",
+    },
+    implementationVisuals: [
+      {
+        src: oeeMonitoringTable,
+        title: "Monitoring Table View",
+        caption: "Detailed performance table used to monitor each line against plan, target, and achievement.",
       },
       {
-        title: "Shopfloor Implementation",
-        caption: "Use this area for photos of the machine connection, control panel, or local operator display.",
+        src: oeeDashboardLine,
+        title: "Production Dashboard",
+        caption: "Dashboard used by supervisors to observe machine and production status in real time.",
+      },
+      {
+        src: oeeDashboardSummary,
+        title: "Management KPI View",
+        caption: "Executive-style OEE dashboard used for fast daily performance review.",
       },
     ],
   },

@@ -102,39 +102,45 @@ export const Container = styled.main`
     margin-bottom: 2rem;
   }
 
+  .hero-visual-grid,
+  .implementation-grid {
+    display: grid;
+    gap: 1.6rem;
+  }
+
+  .hero-visual-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .implementation-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .visual-frame {
     padding: 1.4rem;
   }
 
-  .visual-placeholder {
-    min-height: 26rem;
-    border: 1px dashed #b5b5b5;
-    background:
-      linear-gradient(135deg, rgba(35, 206, 107, 0.1), rgba(1, 111, 185, 0.1)),
-      repeating-linear-gradient(
-        45deg,
-        rgba(0, 0, 0, 0.03),
-        rgba(0, 0, 0, 0.03) 10px,
-        rgba(255, 255, 255, 0.3) 10px,
-        rgba(255, 255, 255, 0.3) 20px
-      );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
+  .visual-frame img {
+    width: 100%;
+    display: block;
+    border: 1px solid #ececec;
   }
 
-  .visual-placeholder span {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #3b3b3b;
+  .visual-frame figcaption {
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+
+  .visual-frame strong {
+    display: block;
+    font-size: 1.3rem;
     text-transform: uppercase;
+    color: #232323;
   }
 
   small {
     display: block;
-    margin-top: 0.8rem;
+    margin-top: 0.4rem;
     font-size: 1.2rem;
     color: #555;
     text-align: center;
@@ -238,7 +244,9 @@ export const Container = styled.main`
     .detail-layout,
     .analysis-grid,
     .bottom-grid,
-    .architecture-section {
+    .architecture-section,
+    .hero-visual-grid,
+    .implementation-grid {
       grid-template-columns: 1fr;
     }
 
@@ -256,8 +264,8 @@ export const Container = styled.main`
       font-size: 2.6rem;
     }
 
-    .visual-placeholder {
-      min-height: 20rem;
+    .visual-frame {
+      padding: 1rem;
     }
   }
 `;
