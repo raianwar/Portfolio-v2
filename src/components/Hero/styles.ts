@@ -6,39 +6,41 @@ export const Container = styled.section`
   justify-content: space-between;
   gap: 8rem;
   background: rgba(0,0,0,0);
+
   .hero-text{
     & > p{
       font-size: 1.8rem;
     }
+
     h1{
       font-size: 7rem;
     }
 
     h3{
-      color:var(--green);
+      color: var(--green);
       margin: 1rem 0;
+      max-width: 62rem;
     }
 
-    
     p.small-resume {
       margin-bottom: 5rem;
+      max-width: 58rem;
     }
   }
-// New added
+
   .social-media{
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding-top:5rem;
-    padding-left:1rem;
+    padding-top: 5rem;
+    padding-left: 1rem;
 
     img,span{
       font-size: 3rem;
       width: 3.5rem;
     }
   }
-
 
   .button{
     margin-top: 5rem;
@@ -51,17 +53,21 @@ export const Container = styled.section`
     }
   }
 
-
   @media(max-width: 960px){
     display: block;
     margin-top: 15%;
-    .hero-text{
 
+    .hero-text{
       h1{
         font-size: 5rem;
       }
+
+      h3,
+      p.small-resume{
+        max-width: 100%;
+      }
     }
-    
+
     .hero-image{
       display: none;
     }
@@ -70,6 +76,7 @@ export const Container = styled.section`
   @media(max-width: 600px){
     margin-top: 35%;
   }
+
   @media(max-width: 480px){
     margin-top: 45%;
   }
