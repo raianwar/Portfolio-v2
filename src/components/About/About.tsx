@@ -1,8 +1,16 @@
 import { Container } from "./styles";
+import arduinoIcon from "../../assets/arduino-1.svg";
+import codesysIcon from "../../assets/Codesys_Logo (2)-converted-from-png.svg";
+import cSharpIcon from "../../assets/c-sharp.svg";
+import mssqlIcon from "../../assets/MSSQL_icon.svg";
+import telegrafIcon from "../../assets/Telegraf_logo.svg";
 import python from "../../assets/python.svg"
 import java from "../../assets/java.svg"
-import nodeIcon from "../../assets/node-icon.svg";
 import mysqlIcon from "../../assets/mysql-icon.svg";
+import mitsubishiIcon from "../../assets/Mitsubishi_Electric_logo.svg.svg";
+import nodeRedIcon from "../../assets/node-red-icon-2.svg";
+import omronIcon from "../../assets/OMRON_Logo.svg.svg";
+import postgresqlIcon from "../../assets/Postgresql.svg";
 import certificateLemmiDetail from "../../assets/certificates/page1-image1.jpg";
 import certificateLemmiFront from "../../assets/certificates/page1-image3.jpg";
 import certificateHydraulicFront from "../../assets/certificates/page1-image2.jpg";
@@ -44,7 +52,7 @@ export function About() {
       highlights: [
         "Increased production line OEE by 12% through real-time machine monitoring systems.",
         "Developed machine-to-database integration using PLC, SQL, and Node-RED.",
-        "Led IIoT and Industry 4.0 initiatives for production tracking and downtime analysis.",
+        "Lead IIoT and Industry 4.0 initiatives for production tracking and downtime analysis.",
       ],
     },
   ];
@@ -97,20 +105,26 @@ export function About() {
       items: [
         { name: "Python", icon: python, alt: "Python" },
         { name: "Java", icon: java, alt: "Java" },
+        { name: "Arduino", icon: arduinoIcon, alt: "Arduino" },
+        { name: "C#", icon: cSharpIcon, alt: "C Sharp" },
       ],
     },
     {
       title: "Database",
       items: [
-        { name: "PostgreSQL", icon: mysqlIcon, alt: "PostgreSQL" },
-        { name: "Microsoft SQL Server", icon: mysqlIcon, alt: "Microsoft SQL Server" },
+        { name: "PostgreSQL", icon: postgresqlIcon, alt: "PostgreSQL" },
+        { name: "MSSQL", icon: mssqlIcon, alt: "Microsoft SQL Server" },
+        { name: "MySQL", icon: mysqlIcon, alt: "MySQL" },
       ],
     },
     {
       title: "PLC & Industrial Platforms",
       items: [
-        { name: "CODESYS" },
-        { name: "Node-RED", icon: nodeIcon, alt: "Node-RED" },
+        { name: "CODESYS", icon: codesysIcon, alt: "CODESYS" },
+        { name: "Mitsubishi", icon: mitsubishiIcon, alt: "Mitsubishi Electric" },
+        { name: "Omron", icon: omronIcon, alt: "Omron" },
+        { name: "Node-RED", icon: nodeRedIcon, alt: "Node-RED" },
+        { name: "Telegraf", icon: telegrafIcon, alt: "Telegraf" },
       ],
     },
   ];
@@ -119,24 +133,34 @@ export function About() {
     <Container id="about">
       <div className="about-text">
         <ScrollAnimation animateIn="fadeInLeft">
-          <h2>About me</h2>
+          <h2>About Me</h2>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.1 * 1000}>
           <p>
-            I'm Raihan, an Industrial Automation and IIoT Engineer focused on OEE digitalization, smart factory implementation, and machine-to-database integration.
+            I’m Raihan, an Industrial Automation and IIoT Engineer with a strong focus on OEE digitalization, smart factory implementation, and machine-to-database integration.
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
           <p>
-            Over the last 5+ years in manufacturing, I have improved production efficiency through real-time monitoring, downtime analysis, and data-driven process optimization.
+            With over 5 years of experience in manufacturing, I have been actively involved in developing and implementing real-time monitoring systems, downtime analysis tools, and data-driven solutions to improve production efficiency and visibility.
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.3 * 1000}>
           <p>
-            My core stack includes PLC programming with CODESYS, Node-RED, Python, PostgreSQL, Microsoft SQL Server, and industrial system integration to support Industry 4.0 transformation initiatives.
+            Beyond development, I contribute to designing system architectures that are scalable, reliable, and aligned with operational needs. I also support the transition from manual processes to digital systems by understanding shopfloor challenges and translating them into practical, implementable solutions.
           </p>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={400}>
+        <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000}>
+          <p>
+            My role combines hands-on technical execution with a structured approach to problem-solving—helping teams adopt digitalization in a way that is both effective and sustainable.
+          </p>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="fadeInLeft" delay={0.5 * 1000}>
+          <p>
+            My core stack includes PLC programming with Mitsubishi, Omron, and CODESYS, along with Node-RED, Telegraf, Python, Java, Arduino, C#, and SQL-based databases (PostgreSQL, MSSQL, MySQL) to build integrated and data-driven industrial systems.
+          </p>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="fadeInLeft" delay={600}>
           <div className="education">
             <h3>Education:</h3>
             <h4>Mechatronic Engineering</h4>
@@ -144,7 +168,7 @@ export function About() {
             <p>GPA 3.35</p>
           </div>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={550}>
+        <ScrollAnimation animateIn="fadeInLeft" delay={750}>
           <div className="experience">
             <h3>Career Roadmap:</h3>
             <div className="timeline">
@@ -168,7 +192,7 @@ export function About() {
           </div>
         </ScrollAnimation>
 
-        <ScrollAnimation animateIn="fadeInLeft" delay={700}>
+        <ScrollAnimation animateIn="fadeInLeft" delay={900}>
           <div className="certifications">
             <h3>Certifications:</h3>
             <div className="certificate-grid">
@@ -192,7 +216,7 @@ export function About() {
           </div>
         </ScrollAnimation>
 
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.8 * 1000}>
+        <ScrollAnimation animateIn="fadeInLeft" delay={1000}>
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">

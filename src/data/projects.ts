@@ -198,18 +198,18 @@ export const projects: ProjectDetail[] = [
     implementationVisuals: [
       {
         src: oeeMonitoringTable,
-        title: "Monitoring Table View",
+        title: "Monitoring Status Machine",
         caption: "Detailed performance table used to monitor each line against plan, target, and achievement.",
       },
       {
         src: oeeDashboardLine,
-        title: "Production Dashboard",
+        title: "Production Timeline Chart",
         caption: "Dashboard used by supervisors to observe machine and production status in real time.",
       },
       {
         src: oeeDashboardSummary,
-        title: "Management KPI View",
-        caption: "Executive-style OEE dashboard used for fast daily performance review.",
+        title: "Dashboard OEE For Operators",
+        caption: "Executive-style OEE dashboard used for fast daily performance review.and input parameters",
       },
     ],
   },

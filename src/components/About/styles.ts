@@ -186,7 +186,10 @@ export const Container = styled.section`
     text-align: center;
 
     img{
-      width: 3.4rem;
+      width: auto;
+      max-width: 100%;
+      height: 3.4rem;
+      object-fit: contain;
     }
 
     span{
