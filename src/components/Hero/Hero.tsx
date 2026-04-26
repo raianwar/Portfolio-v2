@@ -1,10 +1,10 @@
 import { Container } from "./styles"
 import ScrollAnimation from "react-animate-on-scroll"
-import Illustration from "../../assets/illustration.svg"
 import { NavHashLink } from "react-router-hash-link"
 import linkedin from '../../assets/linkedin.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
+import ProfilePhoto from '../../assets/Raihan-CV-profil-transparent.png'
 
 export function Hero() {
   return (
@@ -48,7 +48,7 @@ export function Hero() {
       </div>
       <div className="hero-image">
         <ScrollAnimation animateIn="fadeInRight" delay={1 * 1000}>
-          <img src={Illustration} alt="Illustration" />
+          <img src={ProfilePhoto} alt="Raihan Anwar" />
         </ScrollAnimation>
       </div>
     </Container>

@@ -4,6 +4,7 @@ export const Container = styled.section`
   padding-top: 15%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 8rem;
   background: rgba(0,0,0,0);
 
@@ -48,8 +49,13 @@ export const Container = styled.section`
   }
 
   .hero-image{
+    flex-shrink: 0;
+
     img{
-      max-width: 500px;
+      width: min(34vw, 420px);
+      max-width: 100%;
+      object-fit: cover;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.22));
     }
   }
 

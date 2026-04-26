@@ -7,6 +7,12 @@ import oeeDashboardLine from "../assets/projects/page2-image1.jpg";
 import oeeDashboardSummary from "../assets/projects/page2-image2.jpg";
 import oeeMonitoringTable from "../assets/projects/page2-image3.jpg";
 import oeeArchitecture from "../assets/projects/page2-image4.jpg";
+import sintaReservationList from "../assets/projects/sinta-image1.jpg";
+import sintaKanbanMonitor from "../assets/projects/sinta-image2.jpg";
+import sintaPdfUpload from "../assets/projects/sinta-image3.jpg";
+import sintaCover from "../assets/projects/sinta-image4.jpg";
+import sintaTraining from "../assets/projects/sinta-image5.jpg";
+import sintaFlowchart from "../assets/projects/sinta-image6.jpg";
 
 type ProjectVisual = {
   src: string;
@@ -37,6 +43,99 @@ export type ProjectDetail = {
 };
 
 export const projects: ProjectDetail[] = [
+  {
+    slug: "sinta-material-transaction-application",
+    title: "SINTA Material Transaction Application",
+    subtitle: "Digital workflow for material reservation, IPC coordination, and production supply visibility",
+    shortDescription:
+      "Developed SINTA to digitalize the transaction process between Production and IPC teams, improving material supply coordination, reducing administrative inefficiency, and replacing the previous paper-based reservation workflow.",
+    overview:
+      "SINTA, short for Supply Integration and Transaction Application, was created to solve operational friction in the material reservation and supply process between Production and Internal Part Control teams. The system centralized requests, approvals, task execution, and monitoring into one workflow so users could work faster with better visibility and less dependency on manual paperwork.",
+    challenge:
+      "Before SINTA, the reservation flow relied on manual documents and fragmented coordination across departments. That caused inaccurate supply timing, inefficient administration, and frequent risk of misplaced paper records, making transaction tracking slower and less reliable for both Production and IPC.",
+    solution:
+      "I helped structure and digitalize the end-to-end reservation workflow by translating field observations and stakeholder discussions into an approved process flow, interface mockups, and a deployable web-based operational system. The final solution supported PDF reservation upload, extracted transaction data, kanban-style monitoring, approval handling, and standardized operational guidance so the process became faster, clearer, and more consistent.",
+    impact: [
+      "Reduced dependency on paper-based material reservation handling and manual document tracking.",
+      "Improved coordination speed between Production, IPC, and approving users through one shared workflow.",
+      "Strengthened transaction accuracy and process visibility with structured monitoring and standardized usage rules.",
+    ],
+    technologies: ["Web Application", "PDF Upload", "OCR Data Extraction", "Kanban Monitoring"],
+    keyPoints: [
+      "Mapped real operational pain points into a formalized digital workflow.",
+      "Built process visibility for approvals, task progress, and reservation readiness.",
+      "Supported user adoption through testing, QA validation, socialization, and training.",
+    ],
+    buildProcess: [
+      "Observed the existing process and aligned findings with Production and IPC stakeholders.",
+      "Converted manual pain points into a formal before-vs-after flowchart and application mockup.",
+      "Implemented the workflow into a web application with PDF input, extracted data handling, approvals, and monitoring views.",
+      "Ran internal trials, QA validation, user socialization, and operational guideline preparation before go-live.",
+    ],
+    architectureFlow: [
+      "Production user uploads reservation document",
+      "System extracts reservation and material data",
+      "Approval and task routing to IPC workflow",
+      "Kanban monitoring for progress and readiness tracking",
+      "Production receives status visibility and completes material transaction",
+    ],
+    storyBlocks: [
+      {
+        title: "Project Overview",
+        body:
+          "SINTA was developed to improve the transaction process between Production and IPC, especially for material supply management. The project focused on replacing a manual paper-based flow with a simpler and more reliable digital process that users could follow consistently.",
+      },
+      {
+        title: "How I Built It",
+        body:
+          "The work started from field observation and cross-department discussion to identify real bottlenecks in timing, administration, and record handling. After that, the process was formalized into an approved flowchart, translated into mockups, validated through internal and QA testing, and introduced to users with training and clear usage guidelines.",
+      },
+      {
+        title: "Why It Matters",
+        body:
+          "This implementation made interdepartment coordination easier, reduced administrative burden, and gave teams better visibility into reservation progress and material readiness. It also created a stronger foundation for future digital process standardization inside production operations.",
+      },
+    ],
+    heroVisuals: [
+      {
+        src: sintaKanbanMonitor,
+        title: "Kanban Reservation Monitor",
+        caption: "Main operational board showing approval status, IPC progress, waiting tasks, and ready-to-pick reservations.",
+      },
+      {
+        src: sintaPdfUpload,
+        title: "PDF Upload and Extraction",
+        caption: "Input screen used to upload reservation forms and extract material transaction data into the application.",
+      },
+    ],
+    architectureVisual: {
+      src: sintaFlowchart,
+      title: "Before and After Workflow",
+      caption: "Process comparison showing how the manual reservation flow was transformed into a structured digital workflow.",
+    },
+    implementationVisuals: [
+      {
+        src: sintaReservationList,
+        title: "Reservation Request List",
+        caption: "Reservation list view used to review requests, urgency category, and transaction details in one screen.",
+      },
+      {
+        src: sintaFlowchart,
+        title: "Process Design Flowchart",
+        caption: "Approved before-vs-after flowchart that became the foundation for feature design and workflow logic.",
+      },
+      {
+        src: sintaTraining,
+        title: "User Socialization and Training",
+        caption: "Training and rollout session to support adoption, explain workflow usage, and align operational understanding.",
+      },
+      {
+        src: sintaCover,
+        title: "SINTA Project Identity",
+        caption: "Project presentation cover representing the application rollout within the Automation and Improvement function.",
+      },
+    ],
+  },
   {
     slug: "electricity-monitoring-dashboard",
     title: "Electricity Monitoring Dashboard",
