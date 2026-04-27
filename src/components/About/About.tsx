@@ -7,6 +7,7 @@ import telegrafIcon from "../../assets/Telegraf_logo.svg";
 import python from "../../assets/python.svg"
 import java from "../../assets/java.svg"
 import mysqlIcon from "../../assets/mysql-icon.svg";
+import influxdbIcon from "../../assets/influxdb.svg";
 import mitsubishiIcon from "../../assets/Mitsubishi_Electric_logo.svg.svg";
 import nodeRedIcon from "../../assets/node-red-icon-2.svg";
 import omronIcon from "../../assets/OMRON_Logo.svg.svg";
@@ -115,6 +116,7 @@ export function About() {
         { name: "PostgreSQL", icon: postgresqlIcon, alt: "PostgreSQL" },
         { name: "MSSQL", icon: mssqlIcon, alt: "Microsoft SQL Server" },
         { name: "MySQL", icon: mysqlIcon, alt: "MySQL" },
+        { name: "InfluxDB", icon: influxdbIcon, alt: "InfluxDB" },
       ],
     },
     {
@@ -157,7 +159,7 @@ export function About() {
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.5 * 1000}>
           <p>
-            My core stack includes PLC programming with Mitsubishi, Omron, and CODESYS, along with Node-RED, Telegraf, Python, Java, Arduino, C#, and SQL-based databases (PostgreSQL, MSSQL, MySQL) to build integrated and data-driven industrial systems.
+            My core stack includes PLC programming with Mitsubishi, Omron, and CODESYS, along with Node-RED, Telegraf, Python, Java, Arduino, C#, and database technologies such as PostgreSQL, MSSQL, MySQL, and InfluxDB to build integrated and data-driven industrial systems.
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={600}>
